@@ -1,5 +1,21 @@
 const board = (function() {
 
+  const container = document.querySelector('.board');
+
+  function breakRow() {
+    const clearDiv = document.createElement('div');
+    container.appendChild(clearDiv);
+  };
+
+  function render() {
+    for(var i = 0; i < this.rows * this.columns; i++){
+      if(i % this.rows === 0) {
+        breakRow();
+      }
+      container.appendChild(this.fields[i].getElement());
+    }
+  };
+
   function genFields() {
     const tempArr = [];
     for(var i = 0; i < this.rows; i++){
@@ -18,7 +34,9 @@ const board = (function() {
 
   // TODO: define square dimension, take height and width then create as many fields as it's possible
   const create = () => {
-    return new Board(5, 4);
+    const board = new Board(5, 4);
+    render.call(board);
+    return board;
   };
 
   return {
