@@ -1,4 +1,4 @@
-const field = (function(){
+export default function(){
 
   function genDOMField(row, column) {
     const fieldDOM = document.createElement('div');
@@ -45,4 +45,4 @@ const field = (function(){
     create: create,
   };
 
-})();
+};

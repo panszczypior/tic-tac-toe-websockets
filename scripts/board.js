@@ -1,4 +1,5 @@
-const board = (function() {
+import field from './field.js';
+export default function() {
 
   const container = document.querySelector('.board');
 
@@ -20,7 +21,7 @@ const board = (function() {
     const tempArr = [];
     for(var i = 0; i < this.rows; i++){
       for(var j = 0; j < this.columns; j++){
-        tempArr.push(field.create(i, j));
+        tempArr.push(field().create(i, j));
       }
     }
     return tempArr;
@@ -30,13 +31,13 @@ const board = (function() {
     this.rows = rows;
     this.columns = columns;
     this.fields = genFields.call(this);
+    render.call(this);
   };
 
 
   // TODO: define square dimension, take height and width then create as many fields as it's possible
   const create = () => {
     const board = new Board(5, 4);
-    render.call(board);
     return board;
   };
 
@@ -44,4 +45,4 @@ const board = (function() {
     create: create,
   };
 
-})();
+};

@@ -1,2 +1,3 @@
-const board1 = board.create();
+import board from './board.js';
+const board1 = board().create();
 console.log(board1)

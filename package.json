@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ucanthurtme/tic-tac-toe-websockets/issues"
   },
-  "homepage": "https://github.com/ucanthurtme/tic-tac-toe-websockets#readme"
+  "homepage": "https://github.com/ucanthurtme/tic-tac-toe-websockets#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
 }
