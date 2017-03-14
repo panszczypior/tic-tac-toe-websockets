@@ -1,5 +1,6 @@
 const events = (function(){
   const events = {};
+  // TODO: remove off function, invoke on() should return reference to args function. It'll resolve issue annonymous functions
   const on = (event, fn) => {
     events[event] = events[event] || [];
     events[event].push(fn);
