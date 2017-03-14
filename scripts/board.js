@@ -32,6 +32,7 @@ const board = (function() {
     this.fields = genFields.call(this);
   };
 
+
   // TODO: define square dimension, take height and width then create as many fields as it's possible
   const create = () => {
     const board = new Board(5, 4);

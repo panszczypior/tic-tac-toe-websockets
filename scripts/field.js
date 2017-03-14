@@ -6,15 +6,16 @@ const field = (function(){
     fieldDOM.dataset.row = row;
     fieldDOM.dataset.column = column;
     return fieldDOM;
-  }
-
-  function updateField() {
-    changeSelected.call(this);
   };
 
+  function updateField() {
+    const selected = changeSelected.call(this);
+    this.element.classList.toggle('selected');
+  };
 
   function changeSelected() {
     this.selected = !this.selected;
+    return this.selected;
   };
 
   const Field = function(row, column) {
@@ -28,14 +29,13 @@ const field = (function(){
 
   var proto = Field.prototype;
 
-
   proto.setOwner = function(owner) {
     this.owner = owner;
   };
 
   proto.getElement = function() {
     return this.element;
-  }
+  };
 
   const create = (row, column) => {
     return new Field(row, column);
